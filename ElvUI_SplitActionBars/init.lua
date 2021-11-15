@@ -5,7 +5,7 @@ local ACH
 -- Set Profile Defaults
 for i = 1, 10 do
 	P.actionbar['bar'..i].splitToggle = false
-	P.actionbar['bar'..i].splitStart = 6
+	P.actionbar['bar'..i].splitStart = 7
 	P.actionbar['bar'..i].splitSpacing = 2
 end
 
