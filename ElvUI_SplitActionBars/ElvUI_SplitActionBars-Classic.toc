@@ -5,5 +5,7 @@
 ## Notes: An |cff1784d1ElvUI|r Plugin that allows you to split your actionbars.
 ## RequiredDeps: ElvUI
 ## DefaultState: Enabled
+## X-Curse-Project-ID: 547225
+## X-Wago-ID: WYK9eVKL
 
 init.lua
