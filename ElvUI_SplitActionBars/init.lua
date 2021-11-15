@@ -1,7 +1,7 @@
 local E, L, _, P = unpack(ElvUI)
 local AB = E.ActionBars
 local ACH
---test comment
+
 -- Set Profile Defaults
 for i = 1, 10 do
 	P.actionbar['bar'..i].splitToggle = false
