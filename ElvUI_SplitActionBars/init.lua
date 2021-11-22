@@ -11,16 +11,17 @@ end
 
 local function GetOptions()
 	ACH = E.Libs.ACH
+	local color = E:ClassColor(E.myclass)
 
-	local splitButtonsGroup = ACH:Group(L["Split"], nil, 20, nil, function(info) return E.db.actionbar[info[#info-3]][info[#info]] end, function(info, value) E.db.actionbar[info[#info-3]][info[#info]] = value AB:PositionAndSizeBar(info[#info-3]) end)
+	local splitButtonsGroup = ACH:Group(color:WrapTextInColorCode(L["Split Bar (ElvUI Plugin)"]), nil, 29, nil, function(info) return E.db.actionbar[info[#info-3]][info[#info]] end, function(info, value) E.db.actionbar[info[#info-3]][info[#info]] = value AB:PositionAndSizeBar(info[#info-3]) end)
 	splitButtonsGroup.inline = true
 	splitButtonsGroup.args.splitToggle = ACH:Toggle(L["Enable"], L["Split bar into two sections."], 0, nil, nil, nil, nil, nil, nil, false)
 	splitButtonsGroup.args.splitStart = ACH:Range(L["Split Start"], L["Split bar from this button."], 1, { min = 2, max = _G.NUM_ACTIONBAR_BUTTONS, step = 1 }, nil, nil, nil, nil, function(info) return not E.db.actionbar[info[#info-3]].splitToggle end)
 	splitButtonsGroup.args.splitSpacing = ACH:Range(L["Split Spacing"], L["Split bar with this spacing."], 2, { min = -3, max = 512, step = 1 }, nil, nil, nil, nil, function(info) return not E.db.actionbar[info[#info-3]].splitToggle end)
 
 	for i = 1, 10 do
-		local bar = E.Options.args.actionbar.args.playerBars.args['bar'..i]	
-		bar.args.buttonGroup.args.splitButtonsGroup = CopyTable(splitButtonsGroup)
+		local bar = E.Options.args.actionbar.args.playerBars.args['bar'..i]
+		bar.args.barGroup.args.splitButtonsGroup = CopyTable(splitButtonsGroup)
 	end
 end
 
