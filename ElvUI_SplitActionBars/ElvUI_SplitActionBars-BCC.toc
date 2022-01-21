@@ -1,7 +1,7 @@
-﻿## Interface: 20502
+﻿## Interface: 20503
 ## Title: |cff1784d1ElvUI|r |cff9482c9Split ActionBars|r
 ## Author: Repooc
-## Version: 1.00
+## Version: 1.01
 ## Notes: An |cff1784d1ElvUI|r Plugin that allows you to split your actionbars.
 ## RequiredDeps: ElvUI
 ## DefaultState: Enabled
