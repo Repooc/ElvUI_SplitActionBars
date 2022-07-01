@@ -37,7 +37,7 @@ jobs:
     steps:
       - name: Notify Discord
         uses: EhsanFox/djs-actions@0.1.0
-        width:
+        with:
           id: ${{ secrets.DISCORD_WEBHOOK_ID }}
           token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
           title: ElvUI SplitActionBars Release ${{ github.context.payload.release.tag_name }}
