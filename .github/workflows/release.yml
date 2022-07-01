@@ -22,19 +22,8 @@ jobs:
           fetch-depth: 100
       - name: Release Job
         uses: BigWigsMods/packager@master
-      # - name: Classic
-      #   uses: BigWigsMods/packager@master
-      #   with:
-      #     args: -g classic
-      # - name: Burning Crusade Classic
-      #   uses: BigWigsMods/packager@master
-      #   with:
-      #     args: -g bcc
-  notify-discord:
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
       - name: Notify Discord
+        if: success()
         uses: jhogendorn/djs-actions@main
         with:
           id: ${{ secrets.DISCORD_WEBHOOK_ID }}
@@ -43,3 +32,24 @@ jobs:
           description: ElvUI SplitActionBars version ${{ github.context.payload.release.tag_name }} has been released.  You can use your wow addon client that can download from wago addons or curse to update.
           footer: Addons by Repooc
           timestamp: true
+      # - name: Classic
+      #   uses: BigWigsMods/packager@master
+      #   with:
+      #     args: -g classic
+      # - name: Burning Crusade Classic
+      #   uses: BigWigsMods/packager@master
+      #   with:
+      #     args: -g bcc
+  # notify-discord:
+  #   needs: release
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Notify Discord
+  #       uses: jhogendorn/djs-actions@main
+  #       with:
+  #         id: ${{ secrets.DISCORD_WEBHOOK_ID }}
+  #         token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
+  #         title: ElvUI SplitActionBars Release ${{ github.context.payload.release.tag_name }}
+  #         description: ElvUI SplitActionBars version ${{ github.context.payload.release.tag_name }} has been released.  You can use your wow addon client that can download from wago addons or curse to update.
+  #         footer: Addons by Repooc
+  #         timestamp: true
