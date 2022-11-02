@@ -9,6 +9,14 @@ for i = 1, 10 do
 	P.actionbar['bar'..i].splitSpacing = 2
 end
 
+if E.Retail then
+	for i = 13, 15 do
+		P.actionbar['bar'..i].splitToggle = false
+		P.actionbar['bar'..i].splitStart = 7
+		P.actionbar['bar'..i].splitSpacing = 2
+	end
+end
+
 local function GetOptions()
 	ACH = E.Libs.ACH
 	local color = E:ClassColor(E.myclass)
@@ -23,6 +31,13 @@ local function GetOptions()
 	for i = 1, 10 do
 		bar = E.Options.args.actionbar.args.playerBars.args['bar'..i]
 		bar.args.barGroup.args.splitButtonsGroup = CopyTable(splitButtonsGroup)
+	end
+
+	if E.Retail then
+		for i = 13, 15 do
+			bar = E.Options.args.actionbar.args.playerBars.args['bar'..i]
+			bar.args.barGroup.args.splitButtonsGroup = CopyTable(splitButtonsGroup)
+		end
 	end
 end
 
