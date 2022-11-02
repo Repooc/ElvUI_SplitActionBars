@@ -19,8 +19,9 @@ local function GetOptions()
 	splitButtonsGroup.args.splitStart = ACH:Range(L["Split Start"], L["Split bar from this button."], 1, { min = 2, max = _G.NUM_ACTIONBAR_BUTTONS, step = 1 }, nil, nil, nil, nil, function(info) return not E.db.actionbar[info[#info-3]].splitToggle end)
 	splitButtonsGroup.args.splitSpacing = ACH:Range(L["Split Spacing"], L["Split bar with this spacing."], 2, { min = -3, max = 512, step = 1 }, nil, nil, nil, nil, function(info) return not E.db.actionbar[info[#info-3]].splitToggle end)
 
+	local bar
 	for i = 1, 10 do
-		local bar = E.Options.args.actionbar.args.playerBars.args['bar'..i]
+		bar = E.Options.args.actionbar.args.playerBars.args['bar'..i]
 		bar.args.barGroup.args.splitButtonsGroup = CopyTable(splitButtonsGroup)
 	end
 end
@@ -45,7 +46,7 @@ local function HandleButton(_, bar, button, index, lastButton, lastColumnButton)
 		buttonSpacing = db.splitSpacing
 	end
 
-	local _, horizontal, anchorUp, anchorLeft = AB:GetGrowth(db.point)
+	local _, _, anchorUp, anchorLeft = AB:GetGrowth(db.point)
 	local point, relativeFrame, relativePoint, x, y
 	if index == 1 then
 		local firstButtonSpacing = db.backdrop and (E.Border + db.backdropSpacing) or E.Spacing
