@@ -7,5 +7,6 @@
 ## DefaultState: Enabled
 ## X-Curse-Project-ID: 547225
 ## X-Wago-ID: WYK9eVKL
+## IconTexture: Interface\AddOns\ElvUI_ActionBarBuddy\Logo
 
 init.lua
