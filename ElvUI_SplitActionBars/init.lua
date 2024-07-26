@@ -1,6 +1,6 @@
 local E, L, _, P = unpack(ElvUI)
 local AB = E.ActionBars
-local ACH
+local ACH = E.Libs.ACH
 
 -- Set Profile Defaults
 for i = 1, 10 do
@@ -18,7 +18,6 @@ if E.Retail then
 end
 
 local function GetOptions()
-	ACH = E.Libs.ACH
 	local color = E:ClassColor(E.myclass)
 
 	local splitButtonsGroup = ACH:Group(color:WrapTextInColorCode(L["Split Bar (ElvUI Plugin)"]), nil, 29, nil, function(info) return E.db.actionbar[info[#info-3]][info[#info]] end, function(info, value) E.db.actionbar[info[#info-3]][info[#info]] = value AB:PositionAndSizeBar(info[#info-3]) end)
@@ -100,5 +99,6 @@ local function Initialize()
 	hooksecurefunc(AB, 'HandleButton', HandleButton)
 
 	E.Libs.EP:RegisterPlugin('ElvUI_SplitActionBars', GetOptions)
+	LibStub('RepoocReforged-1.0'):LoadMainCategory()
 end
 hooksecurefunc(E, 'LoadAPI', Initialize)
