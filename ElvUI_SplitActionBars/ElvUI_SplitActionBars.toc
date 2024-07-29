@@ -3,7 +3,7 @@
 ## Interface-Classic: 11503
 ## Title: |cff1784d1ElvUI|r |cff00FF98Split|r |cffF48CBAActionBars|r
 ## Author: Repooc
-## Version: 1.06
+## Version: 1.07
 ## Notes: An |cff1784d1ElvUI|r Plugin that allows you to split your actionbars.
 ## RequiredDeps: ElvUI
 ## DefaultState: Enabled
@@ -11,4 +11,5 @@
 ## X-Wago-ID: WYK9eVKL
 ## IconTexture: Interface\AddOns\ElvUI_SplitActionBars\Logo
 
+Libs\Load_Libs.xml
 init.lua
