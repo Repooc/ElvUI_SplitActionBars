@@ -1,9 +1,7 @@
-﻿## Interface: 110002
-## Interface-Cata: 40400
-## Interface-Classic: 11503
+﻿## Interface: 110005, 40400, 11504
 ## Title: |cff1784d1ElvUI|r |cff00FF98Split|r |cffF48CBAActionBars|r
 ## Author: Repooc
-## Version: 1.08
+## Version: 1.09
 ## Notes: An |cff1784d1ElvUI|r Plugin that allows you to split your actionbars.
 ## RequiredDeps: ElvUI
 ## DefaultState: Enabled
