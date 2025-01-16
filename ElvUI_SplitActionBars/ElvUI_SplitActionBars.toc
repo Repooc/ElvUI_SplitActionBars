@@ -1,5 +1,5 @@
 ﻿## Interface: 110005, 40401, 11505
-## Title: |cff1784d1ElvUI|r |cff00FF98Split|r |cffF48CBAActionBars|r
+## Title: |cff1784d1ElvUI|r |cff00FF98Split|r |cffA330C9ActionBars|r
 ## Author: Repooc
 ## Version: 1.10
 ## Notes: An |cff1784d1ElvUI|r Plugin that allows you to split your actionbars.
