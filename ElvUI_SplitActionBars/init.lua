@@ -2,6 +2,11 @@ local E, L, _, P = unpack(ElvUI)
 local AB = E.ActionBars
 local ACH = E.Libs.ACH
 
+local AddOnName = ...
+local SAB = {
+	Title = C_AddOns.GetAddOnMetadata(AddOnName, 'Title')
+}
+
 -- Set Profile Defaults
 for i = 1, 10 do
 	P.actionbar['bar'..i].splitToggle = false
@@ -20,7 +25,7 @@ end
 local function GetOptions()
 	local color = E:ClassColor(E.myclass)
 
-	local splitButtonsGroup = ACH:Group(color:WrapTextInColorCode(L["Split Bar (ElvUI Plugin)"]), nil, 29, nil, function(info) return E.db.actionbar[info[#info-3]][info[#info]] end, function(info, value) E.db.actionbar[info[#info-3]][info[#info]] = value AB:PositionAndSizeBar(info[#info-3]) end)
+	local splitButtonsGroup = ACH:Group(gsub(SAB.Title, "^.-|r%s", ""), nil, 29, nil, function(info) return E.db.actionbar[info[#info-3]][info[#info]] end, function(info, value) E.db.actionbar[info[#info-3]][info[#info]] = value AB:PositionAndSizeBar(info[#info-3]) end)
 	splitButtonsGroup.inline = true
 	splitButtonsGroup.args.splitToggle = ACH:Toggle(L["Enable"], L["Split bar into two sections."], 0, nil, nil, nil, nil, nil, nil, false)
 	splitButtonsGroup.args.splitStart = ACH:Range(L["Split Start"], L["Split bar from this button."], 1, { min = 2, max = _G.NUM_ACTIONBAR_BUTTONS, step = 1 }, nil, nil, nil, nil, function(info) return not E.db.actionbar[info[#info-3]].splitToggle end)
