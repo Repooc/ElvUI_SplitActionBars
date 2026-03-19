@@ -37,11 +37,9 @@ local function GetOptions()
 		bar.args.barGroup.args.splitButtonsGroup = CopyTable(splitButtonsGroup)
 	end
 
-	if E.Retail then
-		for i = 13, 15 do
-			bar = E.Options.args.actionbar.args.playerBars.args['bar'..i]
-			bar.args.barGroup.args.splitButtonsGroup = CopyTable(splitButtonsGroup)
-		end
+	for i = 13, 15 do
+		bar = E.Options.args.actionbar.args.playerBars.args['bar'..i]
+		bar.args.barGroup.args.splitButtonsGroup = CopyTable(splitButtonsGroup)
 	end
 end
 
