@@ -1,4 +1,4 @@
-﻿## Interface: 110200, 50500, 11507
+﻿## Interface: 120001, 50502, 38000, 20505, 11508
 ## Title: |cff1784d1ElvUI|r |cff00FF98Split|r |cffA330C9ActionBars|r
 ## Author: Repooc
 ## Version: 2.1
